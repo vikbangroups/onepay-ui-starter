@@ -1,0 +1,68 @@
+[
+  {
+    "beneficiaryId": "BEN-ADM-001",
+    "userId": "admin-001",
+    "name": "Ravi Kumar",
+    "accountNumber": "XXXXXXXX1234",
+    "ifsc": "SBIN0000456",
+    "bankName": "State Bank of India",
+    "accountType": "Savings",
+    "verified": true,
+    "addedDate": "2024-06-01T00:00:00Z"
+  },
+  {
+    "beneficiaryId": "BEN-ADM-002",
+    "userId": "admin-001",
+    "name": "Corporate Account",
+    "accountNumber": "XXXXXXXX5678",
+    "ifsc": "HDFC0001234",
+    "bankName": "HDFC Bank",
+    "accountType": "Current",
+    "verified": true,
+    "addedDate": "2024-07-15T00:00:00Z"
+  },
+  {
+    "beneficiaryId": "BEN-MERCH-001",
+    "userId": "merchant-001",
+    "name": "Vendor - ABC Ltd",
+    "accountNumber": "XXXXXXXX9012",
+    "ifsc": "ICIC0000789",
+    "bankName": "ICICI Bank",
+    "accountType": "Current",
+    "verified": true,
+    "addedDate": "2024-03-20T00:00:00Z"
+  },
+  {
+    "beneficiaryId": "BEN-ACC-001",
+    "userId": "accountant-001",
+    "name": "Supplier Account",
+    "accountNumber": "XXXXXXXX3456",
+    "ifsc": "AXIS0002468",
+    "bankName": "Axis Bank",
+    "accountType": "Savings",
+    "verified": false,
+    "addedDate": "2026-01-05T00:00:00Z"
+  },
+  {
+    "beneficiaryId": "BEN-VIEW-001",
+    "userId": "viewer-001",
+    "name": "Personal Account",
+    "accountNumber": "XXXXXXXX7890",
+    "ifsc": "SBIN0001234",
+    "bankName": "State Bank of India",
+    "accountType": "Savings",
+    "verified": true,
+    "addedDate": "2024-11-10T00:00:00Z"
+  },
+  {
+    "beneficiaryId": "BEN-SUP-001",
+    "userId": "support-001",
+    "name": "Team Account",
+    "accountNumber": "XXXXXXXX2468",
+    "ifsc": "YESB0001357",
+    "bankName": "Yes Bank",
+    "accountType": "Current",
+    "verified": true,
+    "addedDate": "2024-08-30T00:00:00Z"
+  }
+]

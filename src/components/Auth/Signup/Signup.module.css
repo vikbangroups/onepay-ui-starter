@@ -1,0 +1,127 @@
+/**
+ * Signup Module Styles
+ * Main page container styling for SignUp page
+ */
+
+/* ========== PAGE HEADER ========== */
+
+.pageHeader {
+  background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+  border-bottom: 1px solid #e5e7eb;
+  padding: var(--space-5) var(--space-8);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.headerContent {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.branding {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.headerLogo {
+  height: 40px;
+  width: auto;
+}
+
+.appName {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0066cc;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.headerTagline {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0;
+  text-align: right;
+}
+
+/* ========== PAGE LAYOUT ========== */
+
+.signupPage {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.mainContent {
+  flex: 1;
+  display: flex;
+  width: 100%;
+}
+
+.footerContainer {
+  width: 100%;
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 768px) {
+  .pageHeader {
+    padding: var(--space-4) var(--space-4);
+  }
+
+  .headerContent {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: var(--space-3);
+  }
+
+  .branding {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .headerLogo {
+    height: 32px;
+  }
+
+  .appName {
+    font-size: var(--font-size-lg);
+  }
+
+  .headerTagline {
+    font-size: var(--font-size-xs);
+    text-align: center;
+  }
+
+  .signupPage {
+    min-height: auto;
+  }
+
+  .mainContent {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .pageHeader {
+    padding: var(--space-3) var(--space-3);
+  }
+
+  .headerLogo {
+    height: 28px;
+  }
+
+  .appName {
+    font-size: var(--font-size-base);
+  }
+
+  .headerTagline {
+    font-size: var(--font-size-xs);
+  }
+}

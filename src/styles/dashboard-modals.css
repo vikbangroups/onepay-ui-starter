@@ -1,0 +1,392 @@
+/**
+ * Dashboard Modal Responsive Styles
+ * Handles responsive design for Credit, Debit, and Failures transaction modals
+ */
+
+/* Modal Overlay */
+.dashboard-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  overflow-y: auto;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal Content */
+.dashboard-modal-content {
+  background-color: white;
+  border-radius: var(--radius-xl, 12px);
+  box-shadow: var(--shadow-2xl, 0 20px 25px rgba(0, 0, 0, 0.15));
+  width: 90%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow: auto;
+  padding: var(--space-8, 2rem);
+  position: relative;
+  animation: slideUp 0.3s ease-out;
+  margin: auto;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Modal Header */
+.dashboard-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-6, 1.5rem);
+  gap: 1rem;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 10;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.dashboard-modal-header h2 {
+  margin: 0;
+  color: #10B981;
+  font-size: 1.5rem;
+  flex: 1;
+}
+
+/* Modal Close Button */
+.dashboard-modal-close {
+  background: #ef4444;
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-lg, 8px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.dashboard-modal-close:hover {
+  background-color: #dc2626;
+  transform: scale(1.1);
+}
+
+/* Date Filter Controls */
+.dashboard-modal-filters {
+  display: flex;
+  gap: var(--space-4, 1rem);
+  margin-bottom: var(--space-6, 1.5rem);
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.dashboard-modal-filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2, 0.5rem);
+}
+
+.dashboard-modal-filter-group label {
+  display: block;
+  margin-bottom: 0;
+  font-weight: 500;
+  font-size: var(--font-size-sm, 0.875rem);
+  color: #374151;
+}
+
+.dashboard-modal-filter-group input {
+  padding: var(--space-2, 0.5rem) var(--space-3, 0.75rem);
+  border: 1px solid #d1d5db;
+  border-radius: var(--radius-lg, 8px);
+  font-size: var(--font-size-sm, 0.875rem);
+  transition: all 0.2s;
+}
+
+.dashboard-modal-filter-group input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Table Wrapper with Horizontal Scroll */
+.dashboard-modal-table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+}
+
+/* Table Styles */
+.dashboard-modal-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.dashboard-modal-table thead {
+  background-color: #f9fafb;
+  border-bottom: 2px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.dashboard-modal-table th {
+  padding: var(--space-3, 0.75rem);
+  text-align: left;
+  font-weight: 600;
+  color: #374151;
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  background: white;
+}
+
+.dashboard-modal-table td {
+  padding: var(--space-3, 0.75rem);
+  border-bottom: 1px solid #e5e7eb;
+  color: #1f2937;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.dashboard-modal-table tbody tr {
+  transition: background-color 0.2s;
+}
+
+.dashboard-modal-table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+.dashboard-modal-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Amount and Status Styling */
+.dashboard-modal-amount {
+  font-weight: 600;
+  color: #059669;
+  min-width: 80px;
+}
+
+.dashboard-modal-amount.negative {
+  color: #dc2626;
+}
+
+.dashboard-modal-status {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.dashboard-modal-status.success {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.dashboard-modal-status.failed {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.dashboard-modal-status.pending {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+/* Modal Footer */
+.dashboard-modal-footer {
+  display: flex;
+  gap: var(--space-4, 1rem);
+  margin-top: var(--space-6, 1.5rem);
+  padding-top: var(--space-6, 1.5rem);
+  border-top: 1px solid #e5e7eb;
+}
+
+.dashboard-modal-footer button {
+  flex: 1;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: var(--radius-lg, 8px);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.2s;
+  background: white;
+  color: #374151;
+}
+
+.dashboard-modal-footer button:hover {
+  background-color: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+/* ===================== MOBILE RESPONSIVE STYLES ===================== */
+
+@media (max-width: 768px) {
+  .dashboard-modal-overlay {
+    padding: 0;
+    align-items: flex-end;
+  }
+
+  .dashboard-modal-content {
+    width: 100%;
+    max-width: 100%;
+    max-height: 85vh;
+    border-radius: 1.5rem 1.5rem 0 0;
+    padding: 1.5rem 1rem;
+    overflow-y: auto;
+  }
+
+  .dashboard-modal-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .dashboard-modal-header h2 {
+    font-size: 1.25rem;
+    width: 100%;
+  }
+
+  .dashboard-modal-close {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+    align-self: flex-end;
+    margin-top: -0.5rem;
+  }
+
+  .dashboard-modal-filters {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .dashboard-modal-filter-group {
+    width: 100%;
+  }
+
+  .dashboard-modal-filter-group input {
+    width: 100%;
+  }
+
+  .dashboard-modal-table {
+    font-size: 0.875rem;
+  }
+
+  .dashboard-modal-table th {
+    padding: var(--space-2, 0.5rem);
+    font-size: 0.7rem;
+  }
+
+  .dashboard-modal-table td {
+    padding: var(--space-2, 0.5rem);
+  }
+
+  .dashboard-modal-footer {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .dashboard-modal-footer button {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-modal-content {
+    padding: 1rem;
+    border-radius: 1.5rem 1.5rem 0 0;
+  }
+
+  .dashboard-modal-header {
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .dashboard-modal-header h2 {
+    font-size: 1.1rem;
+    order: -1;
+  }
+
+  .dashboard-modal-close {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .dashboard-modal-table-wrapper {
+    border: none;
+    margin-bottom: 1rem;
+  }
+
+  .dashboard-modal-table {
+    font-size: 0.8rem;
+  }
+
+  .dashboard-modal-table th {
+    padding: 0.375rem;
+    font-size: 0.65rem;
+  }
+
+  .dashboard-modal-table td {
+    padding: 0.375rem;
+    font-size: 0.8rem;
+  }
+
+  .dashboard-modal-amount,
+  .dashboard-modal-status {
+    font-size: 0.75rem;
+  }
+
+  .dashboard-modal-footer {
+    gap: 0.5rem;
+  }
+
+  .dashboard-modal-footer button {
+    padding: 0.625rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .dashboard-modal-filters {
+    gap: 0.75rem;
+  }
+}

@@ -1,0 +1,638 @@
+/* ==============================================
+   ONEPAY - PREMIUM ANIMATIONS
+   Smooth Transitions & Micro-Interactions
+   ============================================== */
+
+/* ============================================
+   FADE ANIMATIONS
+   ============================================ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 300ms ease-in-out forwards;
+}
+
+.fade-out {
+  animation: fadeOut 300ms ease-in-out forwards;
+}
+
+/* ============================================
+   SLIDE ANIMATIONS
+   ============================================ */
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideOutDown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+}
+
+.slide-in-up {
+  animation: slideInUp 400ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.slide-out-down {
+  animation: slideOutDown 400ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.slide-in-right {
+  animation: slideInRight 400ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.slide-out-left {
+  animation: slideOutLeft 400ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ============================================
+   SCALE ANIMATIONS
+   ============================================ */
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+.scale-in {
+  animation: scaleIn 300ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.scale-out {
+  animation: scaleOut 300ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ============================================
+   PULSE & BREATHING ANIMATIONS
+   ============================================ */
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes breathing {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.breathing {
+  animation: breathing 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* ============================================
+   SPIN ANIMATIONS
+   ============================================ */
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinReverse {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+.spin-reverse {
+  animation: spinReverse 1s linear infinite;
+}
+
+/* ============================================
+   BOUNCE ANIMATIONS
+   ============================================ */
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.bounce {
+  animation: bounce 1s ease-in-out infinite;
+}
+
+.bounce-in {
+  animation: bounceIn 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+/* ============================================
+   SHAKE ANIMATIONS
+   ============================================ */
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-5px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(5px);
+  }
+}
+
+.shake {
+  animation: shake 300ms cubic-bezier(0.36, 0, 0.66, 1);
+}
+
+/* ============================================
+   SHIMMER ANIMATION (Loading)
+   ============================================ */
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    to right,
+    #eff1f3 0%,
+    #e2e2e2 20%,
+    #eff1f3 40%,
+    #eff1f3 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* ============================================
+   GLOW ANIMATION
+   ============================================ */
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(108, 92, 231, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(108, 92, 231, 0.8);
+  }
+}
+
+.glow {
+  animation: glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* ============================================
+   GRADIENT SHIFT ANIMATION
+   ============================================ */
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-shift {
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+}
+
+/* ============================================
+   FLIP ANIMATION
+   ============================================ */
+
+@keyframes flipInX {
+  from {
+    opacity: 0;
+    transform: perspective(400px) rotateX(90deg);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(400px) rotateX(0deg);
+  }
+}
+
+@keyframes flipOutX {
+  from {
+    opacity: 1;
+    transform: perspective(400px) rotateX(0deg);
+  }
+  to {
+    opacity: 0;
+    transform: perspective(400px) rotateX(90deg);
+  }
+}
+
+.flip-in-x {
+  animation: flipInX 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.flip-out-x {
+  animation: flipOutX 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+/* ============================================
+   FADE SLIDE COMBO
+   ============================================ */
+
+@keyframes fadeSlideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-slide-in-up {
+  animation: fadeSlideInUp 500ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ============================================
+   CARD ENTRANCE ANIMATION
+   ============================================ */
+
+@keyframes cardEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.card-entrance {
+  animation: cardEntrance 400ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Stagger effect for multiple cards */
+.card-entrance:nth-child(1) {
+  animation-delay: 0ms;
+}
+.card-entrance:nth-child(2) {
+  animation-delay: 100ms;
+}
+.card-entrance:nth-child(3) {
+  animation-delay: 200ms;
+}
+.card-entrance:nth-child(4) {
+  animation-delay: 300ms;
+}
+.card-entrance:nth-child(5) {
+  animation-delay: 400ms;
+}
+.card-entrance:nth-child(6) {
+  animation-delay: 500ms;
+}
+
+/* ============================================
+   BUTTON MICRO-INTERACTIONS
+   ============================================ */
+
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: width 300ms ease;
+  border-radius: inherit;
+}
+
+.btn:hover::before {
+  width: 100%;
+}
+
+/* ============================================
+   INPUT FOCUS ANIMATION
+   ============================================ */
+
+input,
+textarea,
+select {
+  position: relative;
+}
+
+input::placeholder,
+textarea::placeholder {
+  transition: color 300ms ease;
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+  color: transparent;
+}
+
+/* ============================================
+   ICON ROTATION ANIMATIONS
+   ============================================ */
+
+.icon-rotate {
+  transition: transform 300ms ease;
+}
+
+.icon-rotate:hover {
+  transform: rotate(12deg);
+}
+
+.icon-rotate.up::after {
+  content: '↑';
+}
+
+/* ============================================
+   HOVER LIFT EFFECT
+   ============================================ */
+
+.hover-lift {
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================
+   PROGRESS BAR ANIMATION
+   ============================================ */
+
+@keyframes progress {
+  0% {
+    width: 0;
+  }
+}
+
+.progress-bar {
+  animation: progress 3s ease forwards;
+}
+
+/* ============================================
+   NOTIFICATION ANIMATIONS
+   ============================================ */
+
+@keyframes notificationSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(400px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes notificationSlideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(400px);
+  }
+}
+
+.notification-enter {
+  animation: notificationSlideIn 300ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.notification-exit {
+  animation: notificationSlideOut 300ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ============================================
+   MODAL/DIALOG ANIMATIONS
+   ============================================ */
+
+@keyframes modalBackdropFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalContentSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-backdrop {
+  animation: modalBackdropFadeIn 300ms ease forwards;
+}
+
+.modal-content {
+  animation: modalContentSlideIn 300ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ============================================
+   TEXT ANIMATIONS
+   ============================================ */
+
+@keyframes textFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.text-fade-in {
+  animation: textFadeIn 500ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Stagger text lines */
+.text-fade-in:nth-child(1) {
+  animation-delay: 0ms;
+}
+.text-fade-in:nth-child(2) {
+  animation-delay: 100ms;
+}
+.text-fade-in:nth-child(3) {
+  animation-delay: 200ms;
+}
+
+/* ============================================
+   UTILITY ANIMATION CLASSES
+   ============================================ */
+
+.animated {
+  animation-duration: 300ms;
+  animation-fill-mode: both;
+}
+
+.animation-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animation-delay-500 {
+  animation-delay: 500ms;
+}
+
+/* ============================================
+   TRANSITION UTILITIES
+   ============================================ */
+
+.transition-fast {
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-normal {
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-slow {
+  transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================
+   DISABLE ANIMATIONS (Accessibility)
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

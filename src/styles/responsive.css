@@ -1,0 +1,446 @@
+/* =============================================================================
+   📱 RESPONSIVE BREAKPOINTS & MIXINS - Enterprise Standard
+   Consistent breakpoints across entire application
+   ============================================================================= */
+
+:root {
+  /* BREAKPOINTS */
+  --bp-mobile-small: 320px;
+  --bp-mobile-medium: 480px;
+  --bp-mobile-large: 600px;
+  
+  --bp-tablet-small: 640px;
+  --bp-tablet-medium: 768px;
+  --bp-tablet-large: 900px;
+  
+  --bp-desktop-small: 1024px;
+  --bp-desktop-medium: 1280px;
+  --bp-desktop-large: 1440px;
+  
+  --bp-tv-4k: 2560px;
+
+  /* TOUCH TARGET SIZES */
+  --touch-target-min: 44px;
+  --touch-target-preferred: 48px;
+
+  /* SAFE AREA INSETS (for notches) */
+  --safe-area-top: max(0px, env(safe-area-inset-top));
+  --safe-area-right: max(0px, env(safe-area-inset-right));
+  --safe-area-bottom: max(0px, env(safe-area-inset-bottom));
+  --safe-area-left: max(0px, env(safe-area-inset-left));
+}
+
+/* =============================================================================
+   BREAKPOINT GUIDELINES
+   ============================================================================= */
+
+/* 
+  MOBILE (320px - 639px)
+  ├─ Small (320px - 480px): iPhone SE, older phones
+  ├─ Medium (480px - 600px): Standard phones
+  └─ Large (600px - 639px): Phablets
+  
+  TABLET (640px - 1023px)
+  ├─ Small (640px - 768px): Small tablets
+  ├─ Medium (768px - 900px): iPad standard
+  └─ Large (900px - 1023px): Large tablets
+  
+  DESKTOP (1024px+)
+  ├─ Small (1024px - 1280px): Laptops
+  ├─ Medium (1280px - 1440px): Monitors
+  └─ Large (1440px+): Large monitors
+  
+  TV/4K (2560px+)
+  └─ Ultra-wide displays
+*/
+
+/* =============================================================================
+   MOBILE-FIRST STYLES (320px and up - DEFAULT)
+   ============================================================================= */
+
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-text-size-adjust: none; /* Prevent zoom on input focus */
+}
+
+/* Prevent horizontal scrolling */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Safe area support for notches */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: var(--safe-area-left);
+    padding-right: var(--safe-area-right);
+  }
+}
+
+/* Remove tap delay on touch devices */
+button, a, input, select, textarea {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* Optimize touch targets */
+button, a[role="button"], input[type="button"], input[type="submit"], label {
+  min-height: var(--touch-target-min);
+  min-width: var(--touch-target-min);
+}
+
+/* =============================================================================
+   TABLET OPTIMIZATION (640px and up)
+   ============================================================================= */
+
+@media (min-width: 640px) {
+  :root {
+    --font-size-base: 16px;
+    --space-4: 1rem;
+  }
+
+  /* Enable more complex layouts */
+  [data-layout="grid-2"] {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+
+  /* Wider max-width */
+  .container {
+    max-width: 100%;
+    padding: 0 var(--space-4);
+  }
+}
+
+/* =============================================================================
+   TABLET MEDIUM OPTIMIZATION (768px and up)
+   ============================================================================= */
+
+@media (min-width: 768px) {
+  :root {
+    --font-size-base: 16px;
+  }
+
+  /* Enable 3-column layouts */
+  [data-layout="grid-3"] {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-5);
+  }
+
+  /* Sidebar layouts available */
+  [data-layout="sidebar"] {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: var(--space-6);
+  }
+
+  /* Show desktop navigation */
+  .nav-desktop {
+    display: block;
+  }
+
+  .nav-mobile {
+    display: none;
+  }
+}
+
+/* =============================================================================
+   DESKTOP OPTIMIZATION (1024px and up)
+   ============================================================================= */
+
+@media (min-width: 1024px) {
+  :root {
+    --font-size-base: 16px;
+  }
+
+  /* Desktop hover states available */
+  button:not(:disabled):hover {
+    background-color: rgba(45, 27, 105, 0.08);
+  }
+
+  a:hover {
+    text-decoration-thickness: 3px;
+  }
+
+  /* Enable 4-column layouts */
+  [data-layout="grid-4"] {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6);
+  }
+
+  /* Wider content areas */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Show full tables */
+  table {
+    display: table;
+  }
+
+  /* Show all sidebar items */
+  .sidebar-item {
+    display: block;
+  }
+
+  /* Larger touch targets on desktop */
+  button, a[role="button"] {
+    min-height: var(--touch-target-preferred);
+    min-width: var(--touch-target-preferred);
+  }
+}
+
+/* =============================================================================
+   LARGE DESKTOP OPTIMIZATION (1440px and up)
+   ============================================================================= */
+
+@media (min-width: 1440px) {
+  :root {
+    --font-size-lg: 18px;
+  }
+
+  .container {
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+
+  /* Enable 5-column layouts */
+  [data-layout="grid-5"] {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--space-6);
+  }
+
+  /* Wide sidebar layouts */
+  [data-layout="sidebar-wide"] {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: var(--space-8);
+  }
+}
+
+/* =============================================================================
+   TV/4K OPTIMIZATION (2560px and up)
+   ============================================================================= */
+
+@media (min-width: 2560px) {
+  :root {
+    --font-size-base: 18px;
+    --font-size-lg: 20px;
+  }
+
+  .container {
+    max-width: 2000px;
+    margin: 0 auto;
+  }
+
+  /* Larger touch targets for TV remotes */
+  button, a[role="button"] {
+    min-height: 60px;
+    min-width: 60px;
+    font-size: 18px;
+  }
+
+  /* More spacing */
+  [data-layout="grid-4"] {
+    gap: var(--space-8);
+  }
+}
+
+/* =============================================================================
+   LANDSCAPE ORIENTATION
+   ============================================================================= */
+
+@media (orientation: landscape) and (max-height: 600px) {
+  .app-header {
+    padding: var(--space-2) 0;
+  }
+
+  .app-header-logo-text {
+    display: none; /* Hide tagline in landscape */
+  }
+}
+
+/* =============================================================================
+   PORTRAIT ORIENTATION (Mobile Primary)
+   ============================================================================= */
+
+@media (orientation: portrait) {
+  /* No special changes needed, mobile-first is default */
+}
+
+/* =============================================================================
+   HIGH RESOLUTION SCREENS (Retina displays)
+   ============================================================================= */
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Double-sized assets for Retina */
+  img[src*=".png"],
+  img[src*=".jpg"] {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+/* =============================================================================
+   REDUCED MOTION (Accessibility)
+   ============================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =============================================================================
+   DARK MODE
+   ============================================================================= */
+
+@media (prefers-color-scheme: dark) {
+  /* Dark mode variables already in globals.css */
+}
+
+/* =============================================================================
+   PRINT STYLES
+   ============================================================================= */
+
+@media print {
+  .app-header,
+  .app-footer,
+  .nav-mobile,
+  .nav-desktop {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+/* =============================================================================
+   TOUCH DEVICE DETECTION (Remove hover on touch)
+   ============================================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+  /* Touch device - no hover states */
+  button:hover,
+  a:hover,
+  .card:hover {
+    background-color: inherit;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  /* Desktop/mouse - enable hover */
+  button:hover,
+  a:hover {
+    opacity: 0.8;
+  }
+}
+
+/* =============================================================================
+   FORCED COLORS MODE (Windows High Contrast)
+   ============================================================================= */
+
+@media (forced-colors: active) {
+  * {
+    border-color: CanvasText;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    border: 1px solid;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+/* =============================================================================
+   HELPERS - Apply to elements for responsive behavior
+   ============================================================================= */
+
+/* Hide on mobile, show on tablet+ */
+.hide-mobile {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .hide-mobile {
+    display: block;
+  }
+}
+
+/* Show on mobile, hide on tablet+ */
+.show-mobile {
+  display: block;
+}
+
+@media (min-width: 640px) {
+  .show-mobile {
+    display: none;
+  }
+}
+
+/* Show on desktop only */
+.show-desktop {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .show-desktop {
+    display: block;
+  }
+}
+
+/* Full width on mobile, constrained on desktop */
+.container-fluid {
+  width: 100%;
+  padding: 0 var(--space-4);
+}
+
+@media (min-width: 1024px) {
+  .container-fluid {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+/* =============================================================================
+   COMPONENT-SPECIFIC RESPONSIVE RULES
+   ============================================================================= */
+
+/* Notification dropdown - mobile responsive */
+.notification-dropdown {
+  /* Desktop: right-aligned, fixed width */
+  right: 0;
+  width: auto;
+  min-width: 320px;
+  max-width: 400px;
+}
+
+@media (max-width: 768px) {
+  .notification-dropdown {
+    /* Mobile: full-width minus safe padding */
+    left: 16px !important;
+    right: 16px !important;
+    width: calc(100vw - 32px) !important;
+    max-width: calc(100vw - 32px) !important;
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "admin-001": {
+    "userId": "admin-001",
+    "balance": 150000.00,
+    "credited": 199625.00,
+    "debited": 49625.00,
+    "reserved": 0.00,
+    "currency": "INR"
+  },
+  "merchant-001": {
+    "userId": "merchant-001",
+    "balance": 75500.00,
+    "credited": 79820.00,
+    "debited": 4320.00,
+    "reserved": 0.00,
+    "currency": "INR"
+  },
+  "accountant-001": {
+    "userId": "accountant-001",
+    "balance": 120000.00,
+    "credited": 154715.00,
+    "debited": 34715.00,
+    "reserved": 0.00,
+    "currency": "INR"
+  },
+  "viewer-001": {
+    "userId": "viewer-001",
+    "balance": 50000.00,
+    "credited": 34925.00,
+    "debited": -15075.00,
+    "reserved": 0.00,
+    "currency": "INR"
+  },
+  "support-001": {
+    "userId": "support-001",
+    "balance": 80000.00,
+    "credited": 84835.00,
+    "debited": 4835.00,
+    "reserved": 0.00,
+    "currency": "INR"
+  }
+}

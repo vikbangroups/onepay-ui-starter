@@ -1,0 +1,206 @@
+/**
+ * SignUpFormElements Module Styles
+ * SignUp-specific form components styling (similar to LoginFormElements)
+ */
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .formGroup {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .formGroup {
+    margin-bottom: 8px;
+  }
+}
+
+.formLabel {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1f2937;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: 0.2px;
+}
+
+.required {
+  color: #FF6347;
+  font-weight: 700;
+}
+
+/* ========== FORM INPUT ========== */
+
+.formInput {
+  padding: 12px 16px;
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: inherit;
+  color: #1f2937;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+  width: 100%;
+  line-height: 1.5;
+  box-sizing: border-box;
+  letter-spacing: 0.2px;
+}
+
+.formInput::placeholder {
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+.formInput:focus {
+  outline: none;
+  border-color: #0066cc;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.1);
+}
+
+.formInput:disabled {
+  background-color: #f3f4f6;
+  color: #d1d5db;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.inputError {
+  border-color: #FF6347 !important;
+}
+
+.inputError:focus {
+  box-shadow: 0 0 0 4px rgba(255, 99, 71, 0.1) !important;
+}
+
+/* ========== SELECT DROPDOWN ========== */
+
+.selectInput {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 20px;
+  padding-right: 40px;
+}
+
+.selectInput:hover:not(:disabled) {
+  border-color: #0066cc;
+}
+
+/* ========== ERROR & HELPER TEXT ========== */
+
+.errorMessage {
+  font-size: 13px;
+  color: #FF6347;
+  display: block;
+  font-weight: 500;
+  margin-top: 4px;
+  animation: slideIn 0.2s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.helperText {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 4px;
+  font-weight: 400;
+}
+
+/* ========== CHECKBOX - PREMIUM STYLING ========== */
+
+.checkboxGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+  padding: 0;
+  margin: 0;
+  width: auto;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+  cursor: pointer;
+  accent-color: #FF6347;
+  flex-shrink: 0;
+  border-radius: 4px;
+  margin: 2px 0 0 0;
+  padding: 0;
+  transition: all 0.3s ease;
+  border: 2px solid #d1d5db;
+}
+
+.checkbox:hover:not(:disabled) {
+  border-color: #FF6347;
+  box-shadow: 0 0 0 3px rgba(255, 99, 71, 0.1);
+}
+
+.checkbox:checked {
+  background-color: #FF6347;
+  border-color: #FF6347;
+  box-shadow: 0 2px 4px rgba(255, 99, 71, 0.2);
+}
+
+.checkboxText {
+  font-size: 14px;
+  font-weight: 600;
+  color: #FF6347;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  height: auto;
+  line-height: 1.5;
+  margin: 0;
+  letter-spacing: 0.2px;
+}
+
+.checkboxLabel:hover .checkboxText {
+  color: #e84c32;
+  font-weight: 700;
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 640px) {
+  .formInput {
+    font-size: 16px;
+  }
+
+  .formGroup {
+    margin-bottom: 16px;
+  }
+}

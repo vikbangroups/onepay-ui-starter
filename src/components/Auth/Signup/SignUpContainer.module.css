@@ -1,0 +1,195 @@
+/**
+ * SignUpContainer Module Styles
+ * Two-column layout for SignUp page
+ */
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* ========== LEFT COLUMN - INFO PANEL ========== */
+
+.infoColumn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 40px;
+  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+  border-right: 1px solid #e5e7eb;
+  overflow-y: auto;
+}
+
+/* ========== RIGHT COLUMN - FORM ========== */
+
+.formColumn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 40px;
+  background-color: #ffffff;
+  overflow-y: auto;
+}
+
+.formWrapper {
+  width: 100%;
+  max-width: 480px;
+}
+
+.formHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.formTitle {
+  font-size: 32px;
+  font-weight: 800;
+  color: #FF6347;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+}
+
+.formSubtitle {
+  font-size: 16px;
+  font-weight: 500;
+  color: #0066cc;
+  margin: 0;
+  line-height: 1.5;
+  letter-spacing: 0.3px;
+}
+
+/* ========== TABLET LAYOUT ========== */
+
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr 1.2fr;
+    min-height: auto;
+  }
+
+  .infoColumn {
+    padding: 40px 32px;
+  }
+
+  .formColumn {
+    padding: 40px 32px;
+  }
+
+  .formWrapper {
+    max-width: 420px;
+  }
+
+  .formTitle {
+    font-size: 24px;
+  }
+}
+
+/* ========== MOBILE LAYOUT ========== */
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    gap: 0;
+  }
+
+  .infoColumn {
+    display: flex;
+    padding: 32px 20px;
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+    min-height: auto;
+    background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+  }
+
+  .formColumn {
+    padding: 32px 20px;
+    min-height: auto;
+  }
+
+  .formWrapper {
+    max-width: 100%;
+  }
+
+  .formHeader {
+    margin-bottom: 24px;
+  }
+
+  .formTitle {
+    font-size: 22px;
+  }
+
+  .formSubtitle {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    gap: 0;
+  }
+
+  .infoColumn {
+    padding: 24px 16px;
+  }
+
+  .formColumn {
+    padding: 24px 16px;
+  }
+
+  .formHeader {
+    margin-bottom: 20px;
+  }
+
+  .formTitle {
+    font-size: 20px;
+  }
+
+  .formSubtitle {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .infoColumn {
+    padding: 16px 12px;
+  }
+
+  .formColumn {
+    padding: 16px 12px;
+  }
+
+  .formTitle {
+    font-size: 18px;
+  }
+}
+
+/* ========== SCROLLBAR STYLING ========== */
+
+.infoColumn::-webkit-scrollbar,
+.formColumn::-webkit-scrollbar {
+  width: 8px;
+}
+
+.infoColumn::-webkit-scrollbar-track,
+.formColumn::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.infoColumn::-webkit-scrollbar-thumb,
+.formColumn::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+.infoColumn::-webkit-scrollbar-thumb:hover,
+.formColumn::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}

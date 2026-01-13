@@ -1,0 +1,515 @@
+/* =============================================================================
+   📱 PHASE 3: TABLET OPTIMIZATION
+   Tablet-specific layouts, split-view, orientation handling
+   ============================================================================= */
+
+/* =============================================================================
+   TABLET BREAKPOINT (640px - 1023px)
+   ============================================================================= */
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  /* Container sizing */
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  .container-fluid {
+    padding: 0 20px;
+  }
+
+  /* Typography scaling */
+  body {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+}
+
+/* =============================================================================
+   TABLET GRID LAYOUT (2-column for content)
+   ============================================================================= */
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .tablet-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .tablet-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .tablet-full {
+    grid-column: 1 / -1;
+  }
+
+  /* Card layout on tablet */
+  .card-list.tablet-2col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  /* Transaction list */
+  .transaction-list.tablet-2col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+/* =============================================================================
+   TABLET SIDEBAR LAYOUT
+   ============================================================================= */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .sidebar-layout {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 0;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 0;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    border-right: 1px solid #e2e8f0;
+    background: #f8fafc;
+  }
+
+  .sidebar-link {
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+}
+
+/* =============================================================================
+   TABLET NAVIGATION
+   ============================================================================= */
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .navbar {
+    padding: 12px 20px;
+    min-height: 60px;
+  }
+
+  .nav-logo {
+    max-width: 140px;
+  }
+
+  /* Show breadcrumb on tablet */
+  .breadcrumb {
+    display: flex;
+    gap: 8px;
+    margin: 8px 0;
+    font-size: 12px;
+  }
+
+  /* Mobile menu still needed for tablet in portrait */
+  @media (orientation: portrait) {
+    .mobile-menu-toggle {
+      display: flex;
+    }
+
+    .nav-links {
+      display: none;
+    }
+  }
+
+  /* Desktop menu on tablet in landscape */
+  @media (orientation: landscape) {
+    .mobile-menu-toggle {
+      display: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 16px;
+    }
+
+    .nav-links a {
+      padding: 8px 12px;
+      font-size: 14px;
+    }
+  }
+}
+
+/* =============================================================================
+   TABLET MODAL & DIALOGS
+   ============================================================================= */
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .modal,
+  .dialog {
+    left: 20px !important;
+    right: 20px !important;
+    width: calc(100vw - 40px) !important;
+    max-width: calc(100vw - 40px) !important;
+    max-height: 80vh;
+  }
+
+  /* Split view on landscape tablet */
+  @media (orientation: landscape) {
+    .modal-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    .modal-split-left {
+      border-right: 1px solid #e2e8f0;
+    }
+
+    .modal-split-right {
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+}
+
+/* =============================================================================
+   TABLET FORM OPTIMIZATION
+   ============================================================================= */
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .form-grid-full {
+    grid-column: 1 / -1;
+  }
+
+  .form-button-group {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 12px;
+    flex-direction: row;
+  }
+
+  .form-button-group button {
+    flex: 1;
+    min-height: 44px;
+  }
+
+  /* Input sizing */
+  input,
+  select,
+  textarea {
+    min-height: 44px;
+    font-size: 16px;
+  }
+}
+
+/* =============================================================================
+   TABLET TABLE DISPLAY (Still responsive, but wider)
+   ============================================================================= */
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  table {
+    display: table;
+    width: 100%;
+    font-size: 14px;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tbody {
+    display: table-row-group;
+  }
+
+  tr {
+    display: table-row;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  td,
+  th {
+    display: table-cell;
+    padding: 12px;
+    text-align: left;
+  }
+
+  /* Scrollable table on narrow tablet */
+  @media (max-width: 767px) {
+    .table-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+      min-width: 600px;
+    }
+  }
+}
+
+/* =============================================================================
+   TABLET DASHBOARD LAYOUT
+   ============================================================================= */
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .dashboard-item-wide {
+    grid-column: 1 / -1;
+  }
+
+  .dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .stat-card {
+    padding: 16px;
+  }
+
+  /* Split view on landscape */
+  @media (orientation: landscape) {
+    .dashboard-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .dashboard-item-wide {
+      grid-column: 1 / -1;
+    }
+
+    .dashboard-stats {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+/* =============================================================================
+   TABLET LIST & CARD OPTIMIZATION
+   ============================================================================= */
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .item-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .list-item {
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+  }
+}
+
+/* =============================================================================
+   TABLET ORIENTATION HANDLING
+   ============================================================================= */
+
+/* Portrait mode - 640px wide */
+@media (orientation: portrait) and (min-width: 640px) {
+  .tablet-hide-portrait {
+    display: none !important;
+  }
+
+  .hide-mobile {
+    display: block;
+  }
+}
+
+/* Landscape mode - wider layout */
+@media (orientation: landscape) and (min-width: 640px) and (max-width: 1023px) {
+  .app-header {
+    height: 56px;
+    padding: 8px 20px;
+  }
+
+  .container {
+    max-width: none;
+    padding: 0 20px;
+  }
+
+  .tablet-hide-landscape {
+    display: none !important;
+  }
+
+  /* Use full width in landscape */
+  .modal,
+  .dialog {
+    left: 40px !important;
+    right: 40px !important;
+    width: calc(100vw - 80px) !important;
+    max-width: 800px !important;
+  }
+}
+
+/* =============================================================================
+   TABLET SPLIT PANEL LAYOUT
+   ============================================================================= */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  @media (orientation: landscape) {
+    .split-panel {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      height: calc(100vh - 60px);
+    }
+
+    .split-panel-left {
+      border-right: 1px solid #e2e8f0;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .split-panel-right {
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 20px;
+    }
+
+    /* Hide right panel on portrait */
+    @media (orientation: portrait) {
+      .split-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .split-panel-right {
+        display: none;
+      }
+    }
+  }
+}
+
+/* =============================================================================
+   TABLET SPACING & SIZING
+   ============================================================================= */
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .page-section,
+  .section {
+    padding: 20px;
+  }
+
+  .page-title {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  button,
+  input[type="button"],
+  input[type="submit"],
+  .btn {
+    min-height: 44px;
+    font-size: 16px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="search"],
+  select,
+  textarea {
+    min-height: 44px;
+    padding: 10px 14px;
+  }
+}
+
+/* =============================================================================
+   TABLET BOTTOM SHEET
+   ============================================================================= */
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .bottom-sheet {
+    position: fixed;
+    bottom: 0;
+    left: 20px;
+    right: 20px;
+    width: calc(100vw - 40px);
+    border-radius: 16px 16px 0 0;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.1);
+    animation: slideUp 0.3s ease-out;
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+}
+
+/* =============================================================================
+   TABLET SWIPE & GESTURE SUPPORT
+   ============================================================================= */
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .swipe-gesture {
+    touch-action: pan-y;
+    user-select: none;
+  }
+
+  .swipe-left {
+    animation: swipeLeft 0.3s ease-out;
+  }
+
+  .swipe-right {
+    animation: swipeRight 0.3s ease-out;
+  }
+
+  @keyframes swipeLeft {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes swipeRight {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "wallet": {
+    "balance": 10412.64
+  },
+  "transactions": [
+    {
+      "date": "2025-10-12",
+      "type": "AddMoney",
+      "amount": 1000,
+      "status": "Success"
+    }
+  ]
+}

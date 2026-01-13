@@ -1,0 +1,648 @@
+/* =============================================================================
+   📺 PHASE 5: LARGE SCREEN & TV SUPPORT
+   4K displays, ultra-wide monitors, TV applications
+   ============================================================================= */
+
+/* =============================================================================
+   LARGE DESKTOP (1440px - 2559px)
+   ============================================================================= */
+
+@media (min-width: 1440px) and (max-width: 2559px) {
+  .container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .container-fluid {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* Wider sidebar */
+  .sidebar-layout {
+    grid-template-columns: 320px 1fr;
+  }
+
+  .sidebar {
+    width: 320px;
+  }
+
+  /* Larger typography */
+  body {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+  /* Larger spacing */
+  .page-section,
+  .section {
+    padding: 32px;
+  }
+
+  .page-title {
+    margin-bottom: 20px;
+  }
+
+  /* Larger form elements */
+  input,
+  select,
+  textarea,
+  button {
+    min-height: 48px;
+    font-size: 16px;
+  }
+}
+
+/* =============================================================================
+   4K DISPLAYS (2560px+)
+   ============================================================================= */
+
+@media (min-width: 2560px) {
+  .container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .container-fluid {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  /* Even larger sidebar for 4K */
+  .sidebar-layout {
+    grid-template-columns: 400px 1fr;
+  }
+
+  .sidebar {
+    width: 400px;
+  }
+
+  /* Large app header for 4K */
+  .app-header {
+    min-height: 80px;
+    padding: 16px 40px;
+  }
+
+  /* 4K Typography scaling */
+  body {
+    font-size: 18px;
+    line-height: 1.7;
+  }
+
+  h1 {
+    font-size: 44px;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+
+  h3 {
+    font-size: 28px;
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  small {
+    font-size: 16px;
+  }
+
+  /* 4K spacing grid */
+  .page-section,
+  .section {
+    padding: 48px;
+  }
+
+  .page-title {
+    margin-bottom: 24px;
+  }
+
+  /* 4K cards */
+  .card {
+    padding: 32px;
+    border-radius: 16px;
+  }
+
+  /* 4K form elements */
+  input,
+  select,
+  textarea,
+  button,
+  .btn {
+    min-height: 56px;
+    font-size: 18px;
+    padding: 16px 20px;
+    border-radius: 8px;
+  }
+
+  label {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  /* 4K grid layouts */
+  .desktop-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .desktop-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .desktop-grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+
+  /* 4K statistics grid */
+  .stats-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 32px;
+  }
+
+  .stat-card {
+    padding: 32px;
+  }
+
+  .stat-card-value {
+    font-size: 40px;
+    line-height: 1.1;
+  }
+
+  /* 4K dashboard */
+  .dashboard-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+
+  /* 4K tables */
+  table {
+    font-size: 16px;
+  }
+
+  th,
+  td {
+    padding: 20px;
+  }
+
+  /* 4K list items */
+  .list-item,
+  .card-item,
+  .transaction-item {
+    padding: 24px;
+    margin-bottom: 16px;
+  }
+
+  /* 4K navigation */
+  .nav-links a {
+    font-size: 16px;
+    padding: 12px 0;
+  }
+
+  .sidebar-link,
+  .nav-sidebar-link {
+    padding: 16px 20px;
+    margin: 8px 12px;
+    font-size: 15px;
+  }
+
+  /* 4K modals */
+  .modal,
+  .dialog {
+    max-width: 1200px;
+  }
+
+  .modal-lg {
+    max-width: 1400px;
+  }
+
+  .modal-xl {
+    max-width: 1600px;
+  }
+
+  .modal-header,
+  .modal-content,
+  .modal-footer {
+    padding: 32px;
+  }
+
+  .modal-title {
+    font-size: 24px;
+  }
+
+  /* 4K buttons */
+  button,
+  .btn {
+    font-size: 18px;
+    padding: 16px 28px;
+  }
+
+  /* 4K focus indicators */
+  :focus-visible {
+    outline-width: 4px;
+    outline-offset: 4px;
+  }
+}
+
+/* =============================================================================
+   ULTRA-WIDE DISPLAYS (Aspect ratio 21:9+)
+   ============================================================================= */
+
+@media (min-aspect-ratio: 2.2) {
+  .container-fluid {
+    max-width: 80%;
+  }
+
+  /* Better use of horizontal space */
+  .desktop-grid-3 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  /* Three-column sidebar layout */
+  .multi-column-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+  }
+
+  .section-container {
+    max-width: none;
+  }
+}
+
+/* =============================================================================
+   TV MODE / PUBLIC DISPLAY (3840px+)
+   ============================================================================= */
+
+@media (min-width: 3840px) {
+  :root {
+    --touch-target-min: 64px;
+    --touch-target-preferred: 72px;
+  }
+
+  /* TV-scale typography */
+  body {
+    font-size: 24px;
+    line-height: 1.8;
+  }
+
+  h1 {
+    font-size: 56px;
+  }
+
+  h2 {
+    font-size: 44px;
+  }
+
+  h3 {
+    font-size: 36px;
+  }
+
+  p {
+    font-size: 24px;
+  }
+
+  /* TV-scale spacing */
+  .page-section,
+  .section {
+    padding: 64px;
+  }
+
+  /* TV-scale buttons */
+  button,
+  .btn,
+  .touch-target {
+    min-height: 72px;
+    min-width: 72px;
+    font-size: 24px;
+    padding: 20px 32px;
+  }
+
+  /* TV-scale form elements */
+  input,
+  select,
+  textarea {
+    min-height: 64px;
+    font-size: 24px;
+    padding: 20px 24px;
+  }
+
+  /* TV-scale grid */
+  .desktop-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
+  }
+
+  .desktop-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+  }
+
+  .desktop-grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 48px;
+  }
+
+  /* TV-scale stats */
+  .stats-grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 48px;
+  }
+
+  .stat-card {
+    padding: 48px;
+  }
+
+  .stat-card-value {
+    font-size: 56px;
+  }
+
+  .stat-card-label {
+    font-size: 20px;
+  }
+
+  /* TV-scale cards */
+  .card {
+    padding: 48px;
+    border-radius: 24px;
+  }
+
+  /* TV-scale navigation */
+  .app-header {
+    min-height: 100px;
+    padding: 24px 48px;
+  }
+
+  .nav-links a {
+    font-size: 20px;
+    padding: 16px 0;
+  }
+
+  /* TV-scale sidebar */
+  .sidebar-layout {
+    grid-template-columns: 480px 1fr;
+  }
+
+  .sidebar {
+    width: 480px;
+  }
+
+  .sidebar-link {
+    padding: 24px 28px;
+    font-size: 18px;
+    margin: 12px 16px;
+  }
+
+  /* TV-scale modals */
+  .modal,
+  .dialog {
+    max-width: 80vw;
+    max-height: 80vh;
+  }
+
+  /* TV list items */
+  .list-item,
+  .card-item,
+  .transaction-item {
+    padding: 32px;
+    margin-bottom: 24px;
+  }
+
+  /* TV table */
+  table {
+    font-size: 20px;
+  }
+
+  th,
+  td {
+    padding: 24px;
+  }
+
+  /* TV focus indicators (easier to see from distance) */
+  :focus-visible {
+    outline: 6px solid var(--info, #3b82f6);
+    outline-offset: 8px;
+  }
+
+  /* TV keyboard safe mode */
+  @supports (padding: max(0px)) {
+    body {
+      padding-left: max(0px, env(safe-area-inset-left));
+      padding-right: max(0px, env(safe-area-inset-right));
+    }
+
+    .app-footer {
+      padding-bottom: max(32px, env(safe-area-inset-bottom));
+    }
+  }
+}
+
+/* =============================================================================
+   LARGE SCREEN HOVER EFFECTS (Enhanced for distance viewing)
+   ============================================================================= */
+
+@media (min-width: 2560px) and (hover: hover) and (pointer: fine) {
+  button:hover,
+  .btn:hover,
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-2xl);
+  }
+
+  button:active,
+  .btn:active {
+    transform: scale(0.98);
+  }
+
+  a:hover {
+    color: var(--primary, #2D1B69);
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+  }
+
+  .list-item:hover,
+  .card-item:hover,
+  .transaction-item:hover {
+    transform: translateX(8px);
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+/* =============================================================================
+   LARGE SCREEN SCROLLBARS
+   ============================================================================= */
+
+@media (min-width: 2560px) {
+  /* Larger scrollbars for easier interaction */
+  ::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--bg-lighter, #f1f5f9);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--primary, #2D1B69);
+    border-radius: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #1f0f4d;
+  }
+
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary, #2D1B69) var(--bg-lighter, #f1f5f9);
+  }
+}
+
+/* =============================================================================
+   LARGE SCREEN ANIMATIONS (Slower for comfort at distance)
+   ============================================================================= */
+
+@media (min-width: 2560px) and (prefers-reduced-motion: no-preference) {
+  * {
+    transition-duration: 0.4s;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(-60px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .fade-in {
+    animation: fadeIn 0.4s ease-out;
+  }
+
+  .slide-in {
+    animation: slideIn 0.4s ease-out;
+  }
+}
+
+/* =============================================================================
+   PRINT & EXPORT FOR LARGE DISPLAYS
+   ============================================================================= */
+
+@media print {
+  /* Optimize for large print */
+  body {
+    font-size: 14pt;
+    line-height: 1.8;
+  }
+
+  h1 {
+    font-size: 24pt;
+  }
+
+  h2 {
+    font-size: 18pt;
+  }
+
+  h3 {
+    font-size: 16pt;
+  }
+
+  table {
+    font-size: 12pt;
+  }
+
+  th,
+  td {
+    padding: 12pt;
+  }
+}
+
+/* =============================================================================
+   RESPONSIVE IMAGE SIZING
+   ============================================================================= */
+
+@media (min-width: 2560px) {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .image-thumbnail {
+    width: 160px;
+    height: 160px;
+  }
+
+  .image-small {
+    width: 200px;
+  }
+
+  .image-medium {
+    width: 400px;
+  }
+
+  .image-large {
+    width: 600px;
+  }
+}
+
+/* =============================================================================
+   MAXIMUM CONTENT WIDTH (Prevent excessive line length)
+   ============================================================================= */
+
+@media (min-width: 2560px) {
+  .content-width-limit {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .article-container,
+  .reading-container {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+}

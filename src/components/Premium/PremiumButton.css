@@ -1,0 +1,195 @@
+/* =============================================================================
+   PREMIUM BUTTON COMPONENT STYLES
+   Enterprise-grade button system with 5 variants and 3 sizes
+   ============================================================================= */
+
+.premium-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-semibold);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-decoration: none;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+
+  /* Focus state for accessibility */
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  /* Disabled state */
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+/* ============================================================================
+   BUTTON VARIANTS
+   ============================================================================ */
+
+/* Primary - Main CTA */
+.premium-btn--primary {
+  background: linear-gradient(135deg, #2D1B69 0%, #4A3B99 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(45, 27, 105, 0.25);
+
+  &:hover:not(:disabled) {
+    background: linear-gradient(135deg, #1a0f3f 0%, #2D1B69 100%);
+    box-shadow: 0 8px 20px rgba(45, 27, 105, 0.35);
+    transform: translateY(-2px);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(45, 27, 105, 0.2);
+  }
+}
+
+/* Secondary - Alternative CTA */
+.premium-btn--secondary {
+  background: rgba(45, 27, 105, 0.1);
+  color: #2D1B69;
+  border: 1.5px solid #2D1B69;
+
+  &:hover:not(:disabled) {
+    background: rgba(45, 27, 105, 0.15);
+    border-color: #1a0f3f;
+  }
+
+  &:active:not(:disabled) {
+    background: rgba(45, 27, 105, 0.2);
+  }
+}
+
+/* Danger - Destructive actions */
+.premium-btn--danger {
+  background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25);
+
+  &:hover:not(:disabled) {
+    background: linear-gradient(135deg, #DC2626 0%, #991B1B 100%);
+    box-shadow: 0 8px 20px rgba(239, 68, 68, 0.35);
+    transform: translateY(-2px);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.2);
+  }
+}
+
+/* Success - Positive actions */
+.premium-btn--success {
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+
+  &:hover:not(:disabled) {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.35);
+    transform: translateY(-2px);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2);
+  }
+}
+
+/* Ghost - Minimal button */
+.premium-btn--ghost {
+  background: transparent;
+  color: #2D1B69;
+  border: 1px solid transparent;
+
+  &:hover:not(:disabled) {
+    background: rgba(45, 27, 105, 0.08);
+    border-color: rgba(45, 27, 105, 0.2);
+  }
+
+  &:active:not(:disabled) {
+    background: rgba(45, 27, 105, 0.12);
+  }
+}
+
+/* ============================================================================
+   BUTTON SIZES
+   ============================================================================ */
+
+.premium-btn--sm {
+  font-size: var(--font-size-sm);
+  padding: var(--space-2) var(--space-3);
+  height: 32px;
+}
+
+.premium-btn--md {
+  font-size: var(--font-size-base);
+  padding: var(--space-3) var(--space-5);
+  height: 40px;
+}
+
+.premium-btn--lg {
+  font-size: var(--font-size-lg);
+  padding: var(--space-4) var(--space-8);
+  height: 48px;
+}
+
+/* ============================================================================
+   BUTTON LOADING STATE
+   ============================================================================ */
+
+.premium-btn-loader {
+  position: relative;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ============================================================================
+   BUTTON ICON & TEXT
+   ============================================================================ */
+
+.premium-btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+}
+
+.premium-btn-text {
+  display: inline;
+}
+
+/* ============================================================================
+   RESPONSIVE - MOBILE BUTTONS
+   ============================================================================ */
+
+@media (max-width: 768px) {
+  .premium-btn {
+    width: 100%;
+    padding: var(--space-3) var(--space-4) !important;
+  }
+
+  .premium-btn--lg {
+    height: 44px;
+  }
+}

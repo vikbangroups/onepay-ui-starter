@@ -1,0 +1,163 @@
+/**
+ * SignUpForm Module Styles
+ * Styling for SignUp form component
+ */
+
+.signUpForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.formContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ========== CHECKBOX GROUP ========== */
+
+.checkboxGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding: 12px 0;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* ========== BUTTON CONTAINER ========== */
+
+.buttonContainer {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  width: 100%;
+}
+
+.buttonContainer button {
+  flex: 1;
+  height: 48px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* ========== LOGIN LINK ========== */
+
+.loginLink {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.loginLinkButton {
+  background: none;
+  border: none;
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 6px 12px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.loginLinkButton:hover:not(:disabled) {
+  background-color: #22C55E;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+  transform: translateY(-2px);
+}
+
+.loginLinkButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 768px) {
+  .signUpForm {
+    padding: 0;
+  }
+
+  .checkboxGroup {
+    gap: 12px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    padding: 12px 0;
+  }
+
+  .buttonContainer {
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .loginLink {
+    margin-top: 12px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 640px) {
+  .signUpForm {
+    padding: 0;
+  }
+
+  .checkboxGroup {
+    gap: 10px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    padding: 10px 0;
+  }
+
+  .buttonContainer {
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .buttonContainer button {
+    height: 44px;
+    font-size: 14px;
+  }
+
+  .loginLink {
+    margin-top: 12px;
+    font-size: 12px;
+  }
+
+  .loginLinkButton {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .checkboxGroup {
+    gap: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding: 8px 0;
+  }
+
+  .buttonContainer {
+    gap: 6px;
+    margin-top: 8px;
+  }
+
+  .buttonContainer button {
+    height: 40px;
+    font-size: 13px;
+  }
+
+  .loginLink {
+    margin-top: 8px;
+    font-size: 11px;
+  }
+}

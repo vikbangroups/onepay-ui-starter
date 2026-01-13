@@ -1,0 +1,168 @@
+/**
+ * Header Module Styles
+ * Top navigation bar styling
+ */
+
+.header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.headerContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+
+/* ========== BRAND/LOGO ========== */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+/* ========== RIGHT SECTION ========== */
+
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* ========== ICON BUTTONS ========== */
+
+.iconButton {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconButton:hover {
+  background-color: #f3f4f6;
+}
+
+.iconButton:active {
+  background-color: #e5e7eb;
+}
+
+/* ========== USER MENU ========== */
+
+.userMenu {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-left: 1px solid #e5e7eb;
+  padding-left: 16px;
+}
+
+.userButton {
+  background: none;
+  border: none;
+  font-size: 14px;
+  color: #1f2937;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.userButton:hover {
+  background-color: #f3f4f6;
+}
+
+.logoutButton {
+  background-color: #fee2e2;
+  border: none;
+  color: #dc2626;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.logoutButton:hover {
+  background-color: #fecaca;
+}
+
+.logoutButton:active {
+  background-color: #fca5a5;
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 768px) {
+  .headerContainer {
+    padding: 0 16px;
+    height: 56px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .rightSection {
+    gap: 12px;
+  }
+
+  .userMenu {
+    gap: 8px;
+    padding-left: 12px;
+  }
+
+  .userButton,
+  .logoutButton {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 640px) {
+  .headerContainer {
+    padding: 0 12px;
+    height: 52px;
+  }
+
+  .title {
+    font-size: 14px;
+  }
+
+  .userButton,
+  .logoutButton {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+
+  .userMenu {
+    gap: 6px;
+  }
+}
