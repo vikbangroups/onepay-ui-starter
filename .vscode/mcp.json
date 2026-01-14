@@ -1,4 +1,10 @@
 {
+  "mcpServers": {
+    "bash": {
+      "command": "bash",
+      "args": []
+    }
+  },
   "tools": {
     "terminal": {
       "execute": true
