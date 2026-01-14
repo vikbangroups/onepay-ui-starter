@@ -1,0 +1,18 @@
+{
+  "github.copilot.chat.autoFix": true,
+  "github.copilot.chat.agent.autoFix": true,
+  "chat.tools.global.autoApprove": true,
+  "chat.useAgentSkills": true,
+  "github.copilot.chat.githubMcpServer.readonly": false,
+  "github.copilot.chat.githubMcpServer.lockdown": false,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  }
+}
